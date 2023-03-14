@@ -2,18 +2,18 @@
 #
 # Obtenga lo último de https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-** /[ Ll ] biblioteca /
-** /[ Tt ] emp /
-** /[ Oo ] bj /
-** /[ Bb ] construcción /
-** /[ Bb ] construye /
-** /[ Ll ] ogs /
-** /[ Mm ] capturas emory /
-** /[ Uu ] serSettings /
+**/[ Ll ] biblioteca /
+**/[ Tt ] emp /
+**/[ Oo ] bj /
+**/[ Bb ] construcción /
+**/[ Bb ] construye /
+**/[ Ll ] ogs /
+**/[ Mm ] capturas emory /
+**/[ Uu ] serSettings /
 
 
 # #Los metadatos de activos solo deben ignorarse cuando el activo correspondiente también se ignora
-! /[ Aa ] conjuntos / ** / * .meta
+! /[ Aa ] conjuntos / ** / *.meta
 
 # Descomente esta línea si desea ignorar el complemento de herramientas de la tienda de activos
 # /[Aa]ssets/AssetStoreTools*
@@ -30,33 +30,33 @@
 # Solución VS/MD/Consulo autogenerada y archivos de proyecto
 ExportadoObj /
 .consulo /
-* .csproj
-* .unityproj
-* .sln
-* .suo
-* .tmp
-* .usuario
-* .preferencias de usuario
-* .pidb
-* .booproj
-* .svd
-* .pdb
-* .mdb
-* .opendb
-* .VC.db
-* .syncmetadatos
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.usuario
+*.preferencias de usuario
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.syncmetadatos
 
 # Metaarchivos generados por Unity3D
-* .pidb.meta
-* .pdb.meta
-* .mdb.meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
 
 # Archivo generado por Unity3D en informes de fallas
 información del sistema.txt
 
 # Construcciones
-* .apk
-* .paquete de unidad
+*.apk
+*.paquete de unidad
 
 # Archivo generado por Crashlytics
 crashlytics-build.propiedades
