@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Museum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Registros>
+		<Obra>Obra</Obra>
+		<Pregunta>Pregunta</Pregunta>
+		<A>A</A>
+		<B>B</B>
+		<C>C</C>
+		<Respuesta>Respuesta</Respuesta>
+	</Registros>
+</Museum>

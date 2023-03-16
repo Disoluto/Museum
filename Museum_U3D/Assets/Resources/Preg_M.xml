@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FT009 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Registros>
+		<Obra>1</Obra>
+		<Pregunta>¿Qué ciudad está plasmada en “La noche estrellada” de Van Gogh? </Pregunta>
+		<A>Montpellier</A>
+		<B>Saint Rémy</B>
+		<C>Nimes</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>2</Obra>
+		<Pregunta>¿Qué ciudad fue la nueva capital de Egipto durante el reinado de Akenatón?</Pregunta>
+		<A>Sais</A>
+		<B>Amarna</B>
+		<C>Tebas</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>3</Obra>
+		<Pregunta>¿Cual es el significado de "Nefertiti?</Pregunta>
+		<A>La bella ha venido</A>
+		<B>La reina de la belleza</B>
+		<C>No existe otra más bella que ella</C>
+		<Respuesta>A</Respuesta>
+	</Registros>
+</FT009>
