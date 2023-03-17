@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         anim.SetFloat("VelY", y);
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.Space))
         {
             anim.SetBool("correr", true);
             velocidadMovimiento = velocidadCorriendo;
