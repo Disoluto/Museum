@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 7282685318870265362}
   - component: {fileID: 7478171965030164312}
   m_Layer: 0
-  m_Name: T-Rex
+  m_Name: T-Rex - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
