@@ -16,6 +16,10 @@ public class PlayerMove : MonoBehaviour
 
     public float x, y;
 
+    public AudioSource pasos;
+    private bool Hactivo;
+    private bool Vactivo;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -32,7 +36,7 @@ public class PlayerMove : MonoBehaviour
 
         anim.SetFloat("VelX", x);
         anim.SetFloat("VelY", y);
-       
+
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -44,7 +48,39 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("correr", false);
             velocidadMovimiento = velocidadInicial;
         }
-       
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            Hactivo = true;
+            pasos.Play();
+        }
+        if (Input.GetButtonDown("Vertical"))
+        {
+            if (Hactivo == false)
+            {
+                Vactivo = true;
+                pasos.Play();
+
+            }
+        }
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            Hactivo = false;
+            if (Vactivo == false)
+            {
+                pasos.Pause();
+
+            }
+        }
+        if (Input.GetButtonUp("Vertical"))
+        {
+            Vactivo = false;
+            if (Hactivo == false)
+            {
+                pasos.Pause();
+
+            }
+        }
+
 
 
 
