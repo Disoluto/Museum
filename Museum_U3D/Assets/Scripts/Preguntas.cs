@@ -28,6 +28,12 @@ public class Preguntas : MonoBehaviour
             totVal = "+Name: " + Obra.InnerXml;
             Debug.Log(totVal);
            // uiText.text = totVal;
+
+            
+
         }
+
     }
+
+
 }
