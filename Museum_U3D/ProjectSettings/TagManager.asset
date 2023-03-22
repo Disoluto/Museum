@@ -8,6 +8,7 @@ TagManager:
   - TextA
   - TextB
   - TextC
+  - C1
   layers:
   - Default
   - TransparentFX
