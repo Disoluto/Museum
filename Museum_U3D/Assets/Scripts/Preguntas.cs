@@ -7,7 +7,7 @@ using System.Xml;
 using TMPro;
 public class Preguntas : MonoBehaviour
 {
-    [SerializeField] string Cuadro;
+    [SerializeField] public string Cuadro;
     public TextAsset xmlRawFile;
     string Rcorrecta = "";
     int Puntos = 0;
@@ -18,13 +18,18 @@ public class Preguntas : MonoBehaviour
         
     }
     void parseXmlFile(string xmlData)
+        
     {
         //Debug.Log(xmlData);
         //string totVal = "";
         //string AA = "";
         
         XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.Load(new StringReader(xmlData));
+        //xmlDoc.Load(new StringReader(xmlData)); Por si lo quiero caragar desde "public TextAsset xmlRawFile;" en public class
+
+
+        xmlDoc.Load("Assets/Resources/Preg_M.xml");
+
         string xmlPathPattern = "//FT009/Registros";
         XmlNodeList myNodeList = xmlDoc.SelectNodes(xmlPathPattern);
         Debug.Log(xmlPathPattern);
@@ -69,21 +74,33 @@ public class Preguntas : MonoBehaviour
     {
         if (Rcorrecta == "A")
         {
-            Puntos = Puntos + 1;
+            Puntos = Puntos + 50;
+        }
+        else
+        {
+            Puntos = Puntos - 10;
         }
     }
     public void BotonB()
     {
         if (Rcorrecta == "B")
         {
-            Puntos = Puntos + 1;
+            Puntos = Puntos + 50;
+        }
+        else 
+        {
+            Puntos = Puntos - 10;
         }
     }
     public void BotonC()
     {
         if (Rcorrecta == "C")
         {
-            Puntos = Puntos + 1;
+            Puntos = Puntos + 50;
+        }
+        else
+        {
+            Puntos = Puntos - 10;
         }
     }
 }
