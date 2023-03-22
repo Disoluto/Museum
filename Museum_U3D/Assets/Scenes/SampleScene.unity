@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cuadro: 
-  xmlRawFile: {fileID: 4900000, guid: 7e5632345ce579f4a9f6ea73644877cd, type: 3}
+  xmlRawFile: {fileID: 0}
 --- !u!1 &628569215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08e5e6f7f0d937418a1a3d8cae74207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cuadro: 3
+  Cuadro: F2
   xmlRawFile: {fileID: 4900000, guid: 7e5632345ce579f4a9f6ea73644877cd, type: 3}
 --- !u!1 &1164908705
 GameObject:
@@ -1188,7 +1188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1164908706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cuadro: 3
-  xmlRawFile: {fileID: 4900000, guid: 7e5632345ce579f4a9f6ea73644877cd, type: 3}
+  xmlRawFile: {fileID: 0}
 --- !u!1 &1865422404
 GameObject:
   m_ObjectHideFlags: 0
