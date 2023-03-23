@@ -9,6 +9,7 @@ TagManager:
   - TextB
   - TextC
   - C1
+  - Canvass
   layers:
   - Default
   - TransparentFX
