@@ -14,8 +14,8 @@ public class Preguntas : MonoBehaviour
     void Start()
     {
         string data = xmlRawFile.text;
-        parseXmlFile(data);
-        
+       parseXmlFile(data);
+       Debug.Log(data);
     }
     void parseXmlFile(string xmlData)
         
@@ -25,6 +25,7 @@ public class Preguntas : MonoBehaviour
         //string AA = "";
         
         XmlDocument xmlDoc = new XmlDocument();
+        ////xmlDoc.Load(new StringReader(xmlData));
         //xmlDoc.Load(new StringReader(xmlData)); Por si lo quiero caragar desde "public TextAsset xmlRawFile;" en public class
 
 
