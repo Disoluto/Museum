@@ -48,7 +48,7 @@ public class Tiempo : MonoBehaviour
         if (timeRemaining < 120 & timeRemaining > 60)
         {
             GUI.skin.label.fontSize = 24;
-            GUI.contentColor = Color.blue;
+            GUI.contentColor = Color.magenta;
         }
         if (timeRemaining < 60)
         {
@@ -56,5 +56,11 @@ public class Tiempo : MonoBehaviour
             GUI.contentColor = Color.red;
         }
         GUI.Label(new Rect(10, 20, 300, 48), "Tiempo:  " + mitiempo);
+        if (timeRemaining < 1)
+        {
+            GameObject.FindWithTag("Fin").GetComponent<Canvas>().enabled = true;
+
+        }
+
     }
 }

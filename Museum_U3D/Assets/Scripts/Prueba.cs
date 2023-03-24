@@ -18,6 +18,7 @@ public class Prueba : MonoBehaviour
     Canvas CanvasObject;
     private void Start()
     {
+        GameObject.FindWithTag("Fin").GetComponent<Canvas>().enabled = false;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         ////CanvasObject.GetComponent<Canvas>().enabled = false;
         string data = xmlRawFile.text;
@@ -65,14 +66,7 @@ public class Prueba : MonoBehaviour
         }
 
     }
-    void OnGUI()
-    {
-        //GUIStyle style = new GUIStyle();
-        //style.fontSize = 24;
-        GUI.skin.label.fontSize = 24;
-        GUI.contentColor = Color.yellow;
-        GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
-    }
+
     public void BotonA()
     {
         if (Rcorrecta == "A")
@@ -115,6 +109,7 @@ public class Prueba : MonoBehaviour
         GetComponent<Segundos>();
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
     }
+
     void OnTriggerEnter(Collider other)
     {
         Cuadro = other.gameObject.tag;
@@ -128,5 +123,14 @@ public class Prueba : MonoBehaviour
         Destroy(other.gameObject);
 
 
+    }
+    void OnGUI()
+    {
+        //GUIStyle style = new GUIStyle();
+        //style.fontSize = 24;
+        GUI.skin.label.fontSize = 24;
+        GUI.contentColor = Color.yellow;
+        GUI.Label(new Rect(10, 0, 200, 33), "                   ");
+        GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
     }
 }
