@@ -10,6 +10,7 @@ TagManager:
   - TextC
   - C1
   - Canvass
+  - Tempo
   layers:
   - Default
   - TransparentFX
