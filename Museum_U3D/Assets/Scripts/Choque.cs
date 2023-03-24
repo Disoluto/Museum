@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Choque : MonoBehaviour
 {
-   //// [SerializeField] Preguntas preguntas;
+    ////Preguntas seleccion;
+    ////public Preguntas preguntass;
     void OnTriggerEnter(Collider other)
     {
-       //// preguntas.Cuadro = other.gameObject.tag;
+        Debug.Log("choca: " + other.gameObject.tag);
+        other.GetComponent<Preguntas>().Setpreguntas(other.gameObject.tag);
+        ////    other.GetComponent<Preguntas>().Setpreguntas(other.gameObject.tag);
         Debug.Log("choca: " + other.gameObject.tag);
         Destroy(other.gameObject);
-       // Debug.Log("CHOQUE22");
+
+  
     }
 
 }
