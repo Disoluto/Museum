@@ -5,31 +5,40 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using TMPro;
+using System;
+
 public class Preguntas : MonoBehaviour
 {
-    [SerializeField] public string Cuadro;
+
     public TextAsset xmlRawFile;
     string Rcorrecta = "";
     int Puntos = 0;
+    XmlNodeList myNodeList;
     void Start()
     {
         string data = xmlRawFile.text;
         parseXmlFile(data);
-        
+        Debug.Log(data);
+
     }
     void parseXmlFile(string xmlData)
-        
+
     {
-        //Debug.Log(xmlData);
-        //string totVal = "";
-        //string AA = "";
-        
+
         XmlDocument xmlDoc = new XmlDocument();
-        //xmlDoc.Load(new StringReader(xmlData)); Por si lo quiero caragar desde "public TextAsset xmlRawFile;" en public class
-
-
         xmlDoc.Load("Assets/Resources/Preg_M.xml");
+        string xmlPathPattern = "//FT009/Registros";
+        myNodeList = xmlDoc.SelectNodes(xmlPathPattern);
+        Debug.Log(xmlPathPattern);
 
+
+    }
+    public void Setpreguntas(string v)
+    {
+        Debug.Log(v);
+        string Rcorrecta = "";
+        XmlDocument xmlDoc = new XmlDocument();
+        ////xmlDoc.Load(new StringReader(xmlData));
         string xmlPathPattern = "//FT009/Registros";
         XmlNodeList myNodeList = xmlDoc.SelectNodes(xmlPathPattern);
         Debug.Log(xmlPathPattern);
@@ -41,28 +50,22 @@ public class Preguntas : MonoBehaviour
             XmlNode B = A.NextSibling;
             XmlNode C = B.NextSibling;
             XmlNode D = C.NextSibling;
-  
+
             //totVal = Pregunta.InnerXml;
             // AA = A.InnerXml;
-            if (Obra.InnerXml == Cuadro)
-                {
+            if (Obra.InnerXml == v)
+            {
                 GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = (Pregunta.InnerXml);
                 GameObject.FindWithTag("TextA").GetComponentInChildren<TextMeshProUGUI>().text = (A.InnerXml);
                 GameObject.FindWithTag("TextB").GetComponentInChildren<TextMeshProUGUI>().text = (B.InnerXml);
                 GameObject.FindWithTag("TextC").GetComponentInChildren<TextMeshProUGUI>().text = (C.InnerXml);
                 Rcorrecta = D.InnerXml;
             }
-            //totVal = "+Name: " + Obra.InnerXml;
-            Debug.Log(Rcorrecta);
-            // uiText.text = totVal;
-            //GameObject.Find("RA").GetComponentInChildren<Text>().text = "la di da";
-       
-          
-            
-             //GameObject.Find("Pregunta").GetComponentInChildren<TextMesh>().text = "Button Text";
+                Debug.Log(Rcorrecta);
         }
-
     }
+
+
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();

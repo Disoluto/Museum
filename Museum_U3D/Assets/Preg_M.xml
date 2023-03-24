@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FT009 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Registros>
+		<Obra>C1</Obra>
+		<Pregunta>¿Qué ciudad está plasmada en “La noche estrellada” de Van Gogh? </Pregunta>
+		<A>Montpellier</A>
+		<B>Saint Rémy</B>
+		<C>Nimes</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>C2</Obra>
+		<Pregunta>¿Qué Artista Dijo «Todo lo que puedas imaginar es real»?</Pregunta>
+		<A>Joaquín Sorolla</A>
+		<B>Pablo Picasso</B>
+		<C>Salvador Dalí</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>C3</Obra>
+		<Pregunta>Termina esta frase de Frida Kahlo: “Pies, ¿para qué los quiero si tengo...</Pregunta>
+		<A>Manos para pintar</A>
+		<B>Ojos para ver</B>
+		<C>Alas para volar</C>
+		<Respuesta>C</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>E1</Obra>
+		<Pregunta>¿Qué ciudad fue la nueva capital de Egipto durante el reinado de Akenatón?</Pregunta>
+		<A>Sais</A>
+		<B>Amarna</B>
+		<C>Tebas</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>E2</Obra>
+		<Pregunta>¿Cual es el significado de "Nefertiti?</Pregunta>
+		<A>La bella ha venido</A>
+		<B>La reina de la belleza</B>
+		<C>No existe otra más bella que ella</C>
+		<Respuesta>A</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>E3</Obra>
+		<Pregunta>Según la mitología Egipcia ¿Qué había en el Principio, antes de la Creación?</Pregunta>
+		<A>Un dios cocodrilo que creó el Nilo, la vegetación y la vida</A>
+		<B>Solo un concepto abstracto conocido como "Nun"</B>
+		<C>El cielo y la tierra siempre habían existido y por tanto nunca hubo creación</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>F1</Obra>
+		<Pregunta>¿Cúales son las tres estapas del Mesozóico?</Pregunta>
+		<A>Triásico, Jurásico y Pérmico</A>
+		<B>Devónico, Jurásico y Cretácico</B>
+		<C>Triásico, Jurásico y Cretácico </C>
+		<Respuesta>C</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>F2</Obra>
+		<Pregunta>¿En qué dos órdenes principales se diciden los dinosaurios?</Pregunta>
+		<A>Saurozoquios y Ornistiquios</A>
+		<B>Saurisquios y Ornistiquios </B>
+		<C>Saurisquios y Omnisquios</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>F3</Obra>
+		<Pregunta>¿A qué época del Mesozoico pertenece el Tyrannosaurus Rex?</Pregunta>
+		<A>Jurásico</A>
+		<B>Cretácico</B>
+		<C>Triásico</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>S1</Obra>
+		<Pregunta>¿Qué diosa griega representa “La Venus de Milo”?</Pregunta>
+		<A>Afrodita</A>
+		<B>Atenea</B>
+		<C>Hera</C>
+		<Respuesta>A</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>S2</Obra>
+		<Pregunta>¿Qué objetos sostiene en sus manos el Davdi de Miguel Ángel?</Pregunta>
+		<A>En la izquierda una prenda de vestir y en la derecha no tiene nada</A>
+		<B>En la izquierda una piel de serpiente y en la derecha unas monedas</B>
+		<C>En la izquierda una honda y en la derecha una piedra</C>
+		<Respuesta>D</Respuesta>
+	</Registros>
+	<Registros>
+		<Obra>S3</Obra>
+		<Pregunta>¿Qué representa el pedestal de "La Victoria de Samotracia?</Pregunta>
+		<A>La parte superior de un templo</A>
+		<B>La proa de un navío</B>
+		<C>La cima de una montaña sagrada</C>
+		<Respuesta>B</Respuesta>
+	</Registros>
+</FT009>
