@@ -2,58 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class Tiempo : MonoBehaviour
 {
-    //Variables compartidas en todas las escenas
-    public float tiempo = 0; //Para contabilizar el tiempo
-    public bool isJuego = true; //Para saber si estoy jugando y que se incremente el tiempo cuando entre en la escena de Juego
-    public int vidas = 3; //para contabilizar las vidas
-    public int monedas = 20; //para contabilizar las monedas restantes
-    //Variable para asociar el objeto Texto Tiempo
-    public Text textoTiempo;
-
-    //Script GameManager
-    private GameManager gameManager;
-
-    void Start()
+    string mitiempo;
+    float timeRemaining = 180;
+    public bool timerIsRunning = false;
+    private void Start()
     {
-
-        //Inicializo el texto del contador de tiempo
-        textoTiempo.text = "Tiempo: 00:00";
-
-        //Capturo el script de GameManager
-        gameManager = FindObjectOfType<GameManager>();
-
+        // Starts the timer automatically
+        timerIsRunning = true;
     }
-
     void Update()
     {
-
-        //Escribo tiempo transcurrido (si no se ha acabado el juego)
-        if (gameManager.isJuego)
+        mitiempo = timeRemaining.ToString("F1") + " segundos";
+        Debug.Log(mitiempo);
+        //GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().text = "2222";//mitiempo;//timeRemaining.ToString();
+        if (timerIsRunning)
         {
-            textoTiempo.text = "Tiempo: " + formatearTiempo();
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-
     }
-
-    //Formatear tiempo (público porque la necesitaremos más adelante)
-    public string formatearTiempo()
+    void OnGUI()
     {
+        //GUIStyle style = new GUIStyle();
 
-        //Añado el intervalo transcurrido a la variable tiempo
-        if (gameManager.isJuego)
+        //style.normal.textColor = Color.red;
+        //style.fontSize = 24;
+        if (timeRemaining > 120)
         {
-            gameManager.tiempo += Time.deltaTime;
+            GUI.skin.label.fontSize = 24;
+            GUI.contentColor = Color.green;
         }
-
-        //Formateo minutos y segundos a dos dígitos
-        string minutos = Mathf.Floor(gameManager.tiempo / 60).ToString("00");
-        string segundos = Mathf.Floor(gameManager.tiempo % 60).ToString("00");
-
-        //Devuelvo el string formateado con : como separador
-        return minutos + ":" + segundos;
-
+        if (timeRemaining < 120 & timeRemaining > 60)
+        {
+            GUI.skin.label.fontSize = 24;
+            GUI.contentColor = Color.blue;
+        }
+        if (timeRemaining < 60)
+        {
+            GUI.skin.label.fontSize = 24;
+            GUI.contentColor = Color.red;
+        }
+        GUI.Label(new Rect(10, 20, 300, 48), "Tiempo:  " + mitiempo);
     }
 }
