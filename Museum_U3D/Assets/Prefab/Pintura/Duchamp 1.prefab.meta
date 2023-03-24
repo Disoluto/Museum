@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Museum_U3D/Assets/Prefab/Pintura/Duchamp 1.prefab.meta
 guid: a3b7636a11ae61147993e458bfddf480
 PrefabImporter:
+========
+guid: 2f058b797897baf49812e96b237d60ae
+DefaultImporter:
+>>>>>>>> 7df4104d6bedde94060f179019fde429d935a43c:Museum_U3D/Assets/Prefab/Egipto/escena/Nerea 1.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
