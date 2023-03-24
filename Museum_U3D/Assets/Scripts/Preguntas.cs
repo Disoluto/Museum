@@ -12,7 +12,7 @@ public class Preguntas : MonoBehaviour
 
     public TextAsset xmlRawFile;
     string Rcorrecta = "";
-    int Puntos = 0;
+    int Puntos;
     XmlNodeList myNodeList;
     void Start()
     {
@@ -66,12 +66,15 @@ public class Preguntas : MonoBehaviour
     }
 
 
-    void OnGUI()
-    {
-        GUIStyle style = new GUIStyle();
-        style.fontSize = 24;
-        GUI.Label(new Rect(10, 0, 0, 0), "Puntuación:" + Puntos, style);
-    }
+    //void OnGUI()
+    //{
+
+    //    ////GUI.skin.label.fontSize = 24;
+    //    ////GUI.contentColor = Color.green;
+    //    //////GUIStyle style = new GUIStyle();
+    //    //////style.fontSize = 24;
+    //    ////GUI.Label(new Rect(10, 0, 150, 33), "Puntuación: " + Puntos);
+    //}
 
     public void BotonA() 
     {
