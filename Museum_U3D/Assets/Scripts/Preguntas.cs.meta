@@ -3,7 +3,9 @@ guid: c08e5e6f7f0d937418a1a3d8cae74207
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - xmlRawFile: {fileID: 4900000, guid: 7e5632345ce579f4a9f6ea73644877cd, type: 3}
+  - uiText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
