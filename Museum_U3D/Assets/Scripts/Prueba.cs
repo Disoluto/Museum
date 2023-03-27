@@ -13,11 +13,12 @@ public class Prueba : MonoBehaviour
 
     public TextAsset xmlRawFile;
     string Rcorrecta;
-    int Puntos = 0;
+    public int Puntos = 0;
     string Atexxto;
     Canvas CanvasObject;
     private void Start()
     {
+        Time.timeScale = 0;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         string data = xmlRawFile.text;
         Atexxto = xmlRawFile.text;
@@ -62,36 +63,40 @@ public class Prueba : MonoBehaviour
 
     public void BotonA()
     {
+        pprueba = "A";
         if (Rcorrecta.Equals(pprueba))
         {
             GameObject.FindWithTag("TextA").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
+            
             comienzo();
         }
         else
         {
-            Puntos = Puntos - 10;
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
         ///Invoke("Tiempos", 10.0f);
-        GetComponent<Segundos>();
+        //GetComponent<Segundos>();
     }
     public void BotonB()
     {
+        pprueba = "B";
         if (Rcorrecta.Equals(pprueba))
         {
-            GameObject.FindWithTag("TextB").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
+            GameObject.FindWithTag("Pregunta").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
             comienzo();
         }
         else
         {
-            Puntos = Puntos - 10;
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
         ///Invoke("Tiempos", 10.0f);
-        GetComponent<Segundos>();
+        //GetComponent<Segundos>();
     }
     public void BotonC()
     {
+        pprueba = "C";
         if (Rcorrecta.Equals(pprueba))
         {
             GameObject.FindWithTag("TextC").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
@@ -100,10 +105,10 @@ public class Prueba : MonoBehaviour
         }
         else
         {
-            Puntos = Puntos - 10;
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
         ///Invoke("Tiempos", 10.0f);
-        GetComponent<Segundos>();
+       // GetComponent<Segundos>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -123,6 +128,8 @@ public class Prueba : MonoBehaviour
         GUI.skin.label.fontSize = 24;
         GUI.contentColor = Color.yellow;
         GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
+
+
     }
     void comienzo()
     {

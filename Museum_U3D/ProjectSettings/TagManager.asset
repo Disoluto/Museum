@@ -12,6 +12,10 @@ TagManager:
   - Canvass
   - Tempo
   - Fin
+  - C2
+  - C3
+  - Veredicto
+  - Video
   layers:
   - Default
   - TransparentFX
