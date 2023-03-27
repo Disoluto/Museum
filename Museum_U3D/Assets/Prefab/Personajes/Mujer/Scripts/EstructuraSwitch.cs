@@ -43,7 +43,7 @@ public class EstructuraSwitch : MonoBehaviour
 
             agente.destination = new Vector3(randonX, 0, randonZ)+ transform.position;
             inicioEstado = false;
-            Debug.Log("Patrulla");
+            ////Debug.Log("Patrulla");
         }
         cronometro = cronometro + Time.deltaTime;
         distanciaJugador = Vector3.Distance(transform.position, jugador.position);
@@ -70,11 +70,11 @@ public class EstructuraSwitch : MonoBehaviour
         cronometro = cronometro + Time.deltaTime;
         distanciaJugador = Vector3.Distance(transform.position, jugador.position); //Debug.Log("Perseguir Player");
         agente.destination = jugador.position;
-        Debug.Log("persigue");
+        ////Debug.Log("persigue");
         if (distanciaJugador > 5 && cronometro > 5)
             
         {
-            Debug.Log("no persigue");
+            ////Debug.Log("no persigue");
             CambiarEstado(0);
         }
         if (distanciaJugador < 2.5f)
@@ -92,7 +92,7 @@ public class EstructuraSwitch : MonoBehaviour
 
         if (inicioEstado)
         {
-            Debug.Log("ataquEEEE");
+            ////Debug.Log("ataquEEEE");
            
             inicioEstado = false;
             agente.destination = transform.position;

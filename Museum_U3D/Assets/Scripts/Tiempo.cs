@@ -18,7 +18,7 @@ public class Tiempo : MonoBehaviour
     void Update()
     {
         mitiempo = timeRemaining.ToString("F1") + " segundos";
-        Debug.Log(mitiempo);
+       // Debug.Log(mitiempo);
         //GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().text = "2222";//mitiempo;//timeRemaining.ToString();
         if (timerIsRunning)
         {
@@ -28,7 +28,7 @@ public class Tiempo : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                //Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
             }

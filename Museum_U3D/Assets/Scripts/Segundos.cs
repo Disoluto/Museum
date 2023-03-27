@@ -25,3 +25,4 @@ public class Segundos : MonoBehaviour
         Time.timeScale = 1;
     }
 }
+
