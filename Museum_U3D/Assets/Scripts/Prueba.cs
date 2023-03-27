@@ -19,8 +19,9 @@ public class Prueba : MonoBehaviour
     private void Start()
     {
        
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+        //GameObject.FindWithTag("Juego").GetComponent<Camera>().enabled = true;
         string data = xmlRawFile.text;
         Atexxto = xmlRawFile.text;
         parseXmlFile(data);
@@ -126,9 +127,9 @@ public class Prueba : MonoBehaviour
     }
     void OnGUI()
     {
-        GUI.skin.label.fontSize = 24;
-        GUI.contentColor = Color.yellow;
-        GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
+        //////GUI.skin.label.fontSize = 24;
+        //////GUI.contentColor = Color.yellow;
+        //////GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
 
 
     }

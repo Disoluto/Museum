@@ -1192,6 +1192,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 431159305, guid: b5d2b3be8994521408d4fb777ac503f3, type: 3}
+      propertyPath: m_TagString
+      value: Juego
+      objectReference: {fileID: 0}
+    - target: {fileID: 431159307, guid: b5d2b3be8994521408d4fb777ac503f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6007275641732120807, guid: b5d2b3be8994521408d4fb777ac503f3, type: 3}
       propertyPath: m_Name
       value: HombreMuseum
@@ -1277,7 +1285,7 @@ GameObject:
   - component: {fileID: 845621044}
   - component: {fileID: 845621043}
   m_Layer: 0
-  m_Name: VideoPlayer
+  m_Name: Videoplayer
   m_TagString: VideoPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

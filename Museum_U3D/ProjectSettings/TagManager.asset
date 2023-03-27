@@ -17,6 +17,7 @@ TagManager:
   - Veredicto
   - Video
   - VideoPlayer
+  - Juego
   layers:
   - Default
   - TransparentFX
