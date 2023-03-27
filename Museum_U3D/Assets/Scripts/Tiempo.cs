@@ -7,6 +7,8 @@ using System;
 
 public class Tiempo : MonoBehaviour
 {
+    Prueba datos;
+    public int PPuntos = 0;
     string mitiempo;
     float timeRemaining = 180;
     public bool timerIsRunning = false;
@@ -37,7 +39,10 @@ public class Tiempo : MonoBehaviour
     void OnGUI()
     {
         //GUIStyle style = new GUIStyle();
-
+        //////GUI.skin.label.fontSize = 24;
+        //////GUI.contentColor = Color.yellow;
+        //////GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + PPuntos;
+        
         //style.normal.textColor = Color.red;
         //style.fontSize = 24;
         if (timeRemaining > 120)
