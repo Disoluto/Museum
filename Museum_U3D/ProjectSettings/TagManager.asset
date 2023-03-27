@@ -16,6 +16,7 @@ TagManager:
   - C3
   - Veredicto
   - Video
+  - VideoPlayer
   layers:
   - Default
   - TransparentFX

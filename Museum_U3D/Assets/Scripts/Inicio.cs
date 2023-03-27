@@ -7,13 +7,19 @@ public class Inicio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = true;
+        GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = true;
+
         Time.timeScale = 0;
-        GameObject.FindWithTag("TextA").GetComponentInChildren<TextMeshProUGUI>().text = (A.InnerXml);
+     //   GameObject.FindWithTag("Video").GetComponentInChildren<TextMeshProUGUI>().text = (A.InnerXml);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Finvideo()
     {
-        
+        GameObject.FindWithTag("Video").GetComponent<Canvas>().enabled = false;
+
+        Time.timeScale = 1;
+       GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;
     }
 }

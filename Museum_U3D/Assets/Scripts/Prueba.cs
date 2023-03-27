@@ -10,7 +10,7 @@ public class Prueba : MonoBehaviour
     string Cuadro = "C3";
     string pprueba = "";
     public Segundos espera;
-
+ 
     public TextAsset xmlRawFile;
     string Rcorrecta;
     public int Puntos = 0;
@@ -18,6 +18,7 @@ public class Prueba : MonoBehaviour
     Canvas CanvasObject;
     private void Start()
     {
+       
         Time.timeScale = 0;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         string data = xmlRawFile.text;
