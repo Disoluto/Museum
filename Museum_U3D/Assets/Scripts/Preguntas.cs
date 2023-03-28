@@ -11,7 +11,7 @@ public class Preguntas : MonoBehaviour
 {
 
     public TextAsset xmlRawFile;
-    string Rcorrecta = "";
+    //string Rcorrecta = "";
     int Puntos;
     XmlNodeList myNodeList;
     void Start()

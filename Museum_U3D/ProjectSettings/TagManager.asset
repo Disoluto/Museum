@@ -17,6 +17,21 @@ TagManager:
   - Veredicto
   - Video
   - VideoPlayer
+  - Juego
+  - Puntos
+  - Respuesta
+  - DatosPuntos
+  - Tiempo
+  - Mujer
+  - E2
+  - E1
+  - E3
+  - S1
+  - S2
+  - S3
+  - F1
+  - F2
+  - F3
   layers:
   - Default
   - TransparentFX

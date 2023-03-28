@@ -7,20 +7,19 @@ using System.Xml;
 using TMPro;
 public class Prueba : MonoBehaviour
 {
+
     string Cuadro = "C3";
     string pprueba = "";
-    public Segundos espera;
- 
     public TextAsset xmlRawFile;
     string Rcorrecta;
     public int Puntos = 0;
     string Atexxto;
-    Canvas CanvasObject;
+
     private void Start()
     {
-       
-        Time.timeScale = 0;
+
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+        GameObject.FindWithTag("DatosPuntos").GetComponent<Canvas>().enabled = false;
         string data = xmlRawFile.text;
         Atexxto = xmlRawFile.text;
         parseXmlFile(data);
@@ -29,9 +28,6 @@ public class Prueba : MonoBehaviour
     }
     void parseXmlFile(string xmlData)
     {
-        //string totVal = "";
-        //string AA = "";
-        
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(new StringReader(xmlData));
         string xmlPathPattern = "//FT009/Registros";
@@ -46,18 +42,16 @@ public class Prueba : MonoBehaviour
             XmlNode C = B.NextSibling;
             XmlNode D = C.NextSibling;
 
-            //totVal = Pregunta.InnerXml;
-            // AA = A.InnerXml;
             if (Obra.InnerXml.Equals(Cuadro))
             {
                 GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = (Pregunta.InnerXml);
                 GameObject.FindWithTag("TextA").GetComponentInChildren<TextMeshProUGUI>().text = (A.InnerXml);
                 GameObject.FindWithTag("TextB").GetComponentInChildren<TextMeshProUGUI>().text = (B.InnerXml);
                 GameObject.FindWithTag("TextC").GetComponentInChildren<TextMeshProUGUI>().text = (C.InnerXml);
-                Rcorrecta = D.InnerXml;
+                GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text = (D.InnerXml);
+                Rcorrecta = GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text;
             }
-            pprueba = Rcorrecta;
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAA---------" + Rcorrecta);
+
         }
 
     }
@@ -65,51 +59,74 @@ public class Prueba : MonoBehaviour
     public void BotonA()
     {
         pprueba = "A";
-        if (Rcorrecta.Equals(pprueba))
+        if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
-            GameObject.FindWithTag("TextA").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
-            
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             comienzo();
         }
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            if (Puntos > 10)
+            {
+                Puntos = Puntos - 10;
+            }    
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
-        ///Invoke("Tiempos", 10.0f);
-        //GetComponent<Segundos>();
+
     }
     public void BotonB()
     {
+        
         pprueba = "B";
-        if (Rcorrecta.Equals(pprueba))
+        if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
-            GameObject.FindWithTag("Pregunta").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             comienzo();
         }
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            if (Puntos > 10)
+            {
+                Puntos = Puntos - 10;
+            }
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
-        ///Invoke("Tiempos", 10.0f);
-        //GetComponent<Segundos>();
+
     }
     public void BotonC()
     {
         pprueba = "C";
-        if (Rcorrecta.Equals(pprueba))
+        if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
-            GameObject.FindWithTag("TextC").GetComponentInChildren<TextMeshProUGUI>().text = " C O R R E C T A";
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             comienzo();
         }
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            if (Puntos > 10)
+            {
+                Puntos = Puntos - 10;
+            }
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
-        ///Invoke("Tiempos", 10.0f);
-       // GetComponent<Segundos>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -121,19 +138,13 @@ public class Prueba : MonoBehaviour
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = true;
         Debug.Log("choca: " + other.gameObject.tag);
         Destroy(other.gameObject);
-
-
-    }
-    void OnGUI()
-    {
-        GUI.skin.label.fontSize = 24;
-        GUI.contentColor = Color.yellow;
-        GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
-
+       
 
     }
+
     void comienzo()
     {
+
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
     }

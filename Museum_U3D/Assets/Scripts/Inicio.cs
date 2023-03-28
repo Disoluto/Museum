@@ -1,25 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inicio : MonoBehaviour
 {
     // Start is called before the first frame update
+    
     void Start()
     {
-        GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = true;
-        GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = true;
-
         Time.timeScale = 0;
-     //   GameObject.FindWithTag("Video").GetComponentInChildren<TextMeshProUGUI>().text = (A.InnerXml);
     }
 
     // Update is called once per frame
     public void Finvideo()
     {
-        GameObject.FindWithTag("Video").GetComponent<Canvas>().enabled = false;
-
+        GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;
+        GameObject.FindWithTag("Video").active = false;
+        GameObject.FindWithTag("DatosPuntos").GetComponent<Canvas>().enabled = true;
         Time.timeScale = 1;
-       GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;
     }
 }

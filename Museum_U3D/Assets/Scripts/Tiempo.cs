@@ -19,9 +19,8 @@ public class Tiempo : MonoBehaviour
     }
     void Update()
     {
-        mitiempo = timeRemaining.ToString("F1") + " segundos";
-       // Debug.Log(mitiempo);
-        //GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().text = "2222";//mitiempo;//timeRemaining.ToString();
+        mitiempo = timeRemaining.ToString("F1");
+        CalculoTiempo();
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -36,35 +35,24 @@ public class Tiempo : MonoBehaviour
             }
         }
     }
-    void OnGUI()
+    void CalculoTiempo()
     {
-        //GUIStyle style = new GUIStyle();
-        //////GUI.skin.label.fontSize = 24;
-        //////GUI.contentColor = Color.yellow;
-        //////GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + PPuntos;
-        
-        //style.normal.textColor = Color.red;
-        //style.fontSize = 24;
+        GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().text = mitiempo;
         if (timeRemaining > 120)
         {
-            GUI.skin.label.fontSize = 24;
-            GUI.contentColor = Color.green;
+            GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().color = new Color(222, 41, 22, 255);
         }
         if (timeRemaining < 120 & timeRemaining > 60)
         {
-            GUI.skin.label.fontSize = 24;
-            GUI.contentColor = Color.magenta;
+            GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().color = new Color(255, 231, 0, 255);
         }
         if (timeRemaining < 60)
         {
-            GUI.skin.label.fontSize = 24;
-            GUI.contentColor = Color.red;
+            GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
         }
-        GUI.Label(new Rect(10, 20, 300, 48), "Tiempo:  " + mitiempo);
         if (timeRemaining < 1)
         {
             GameObject.FindWithTag("Fin").GetComponent<Canvas>().enabled = true;
-
         }
 
     }
