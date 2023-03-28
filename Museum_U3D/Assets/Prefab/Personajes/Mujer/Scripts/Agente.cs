@@ -22,6 +22,5 @@ public class Agente : MonoBehaviour
         //{
         //    agente.destination = jugador.position;
         //}
-
     }
 }
