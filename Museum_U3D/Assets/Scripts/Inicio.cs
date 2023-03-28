@@ -9,20 +9,14 @@ public class Inicio : MonoBehaviour
     
     void Start()
     {
-        
-        //GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = true;
         Time.timeScale = 0;
     }
 
     // Update is called once per frame
     public void Finvideo()
     {
-
-
-
         GameObject.FindWithTag("VideoPlayer").GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;
         GameObject.FindWithTag("Video").active = false;
-        //GameObject.FindWithTag("Juego").GetComponent<Camera>().enabled = true;
         GameObject.FindWithTag("DatosPuntos").GetComponent<Canvas>().enabled = true;
         Time.timeScale = 1;
     }

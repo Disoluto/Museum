@@ -21,8 +21,6 @@ public class Tiempo : MonoBehaviour
     {
         mitiempo = timeRemaining.ToString("F1");
         CalculoTiempo();
-       // Debug.Log(mitiempo);
-        //GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().text = "2222";//mitiempo;//timeRemaining.ToString();
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -46,20 +44,15 @@ public class Tiempo : MonoBehaviour
         }
         if (timeRemaining < 120 & timeRemaining > 60)
         {
-
             GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().color = new Color(255, 231, 0, 255);
-            //GUI.skin.label.fontSize = 24;
-            //GUI.contentColor = Color.magenta;
         }
         if (timeRemaining < 60)
         {
             GameObject.FindWithTag("Tiempo").GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
         }
-
         if (timeRemaining < 1)
         {
             GameObject.FindWithTag("Fin").GetComponent<Canvas>().enabled = true;
-
         }
 
     }

@@ -59,7 +59,6 @@ public class Prueba : MonoBehaviour
     public void BotonA()
     {
         pprueba = "A";
-        Debug.Log("bbb80" + GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text + "-" + pprueba);
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
@@ -77,6 +76,7 @@ public class Prueba : MonoBehaviour
             }    
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
 
     }
@@ -84,7 +84,6 @@ public class Prueba : MonoBehaviour
     {
         
         pprueba = "B";
-        Debug.Log("bbb80" + GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text + "-" + pprueba);
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
@@ -102,35 +101,32 @@ public class Prueba : MonoBehaviour
             }
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
 
     }
     public void BotonC()
     {
-        Debug.Log("ccc80" + Rcorrecta + "-" + pprueba);
         pprueba = "C";
-        Debug.Log("bbb80" + GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text + "-" + pprueba);
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
             Puntos = Puntos + 80;
-            Debug.Log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             comienzo();
         }
         else
         {
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
             if (Puntos > 10)
             {
                 Puntos = Puntos - 10;
             }
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
- 
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
-        ///Invoke("Tiempos", 10.0f);
-       // GetComponent<Segundos>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -146,18 +142,6 @@ public class Prueba : MonoBehaviour
 
     }
 
-    //void OnGUI()
-    //{
-        
-    //    GUI.skin.label.fontSize = 24;
-    //    GUI.contentColor = Color.yellow;
-    //    GUI.Label(new Rect(10, 0, 200, 33), "Puntos:  " + Puntos);
-    //    //if (GUI.Button(new Rect(10, 10, 150, 100), "I am a button"))
-    //    //{
-    //    //    print("You clicked the button!");
-    //    //}
-
-    //}
     void comienzo()
     {
 
