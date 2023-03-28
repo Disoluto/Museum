@@ -18,6 +18,11 @@ TagManager:
   - Video
   - VideoPlayer
   - Juego
+  - Puntos
+  - Respuesta
+  - DatosPuntos
+  - Tiempo
+  - Mujer
   layers:
   - Default
   - TransparentFX
