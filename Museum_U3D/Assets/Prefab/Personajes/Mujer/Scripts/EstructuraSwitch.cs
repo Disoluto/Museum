@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EstructuraSwitch : MonoBehaviour
 
 {
+    int ataque = 0;
     NavMeshAgent agente;
     Transform jugador;
     int estado = 0;
@@ -38,8 +39,8 @@ public class EstructuraSwitch : MonoBehaviour
         distanciaJugador = Vector3.Distance(transform.position, jugador.position);
         if (inicioEstado)
         {
-            float randonX = Random.Range(-15.0f, 15.0f);
-            float randonZ = Random.Range(-15.0f, 15.0f);
+            float randonX = Random.Range(-7.0f, 7.0f);
+            float randonZ = Random.Range(-7.0f, 7.0f);
 
             agente.destination = new Vector3(randonX, 0, randonZ)+ transform.position;
             inicioEstado = false;
@@ -53,7 +54,7 @@ public class EstructuraSwitch : MonoBehaviour
         {
             CambiarEstado(0);
         }
-        if (distanciaJugador < 25)
+        if (distanciaJugador < 15)
         {
             CambiarEstado(1);
         }
@@ -92,8 +93,12 @@ public class EstructuraSwitch : MonoBehaviour
 
         if (inicioEstado)
         {
-            ////Debug.Log("ataquEEEE");
-           
+            Debug.Log("ataquEEEE");
+            ataque = ataque + 1;
+            if (ataque == 100)
+            {
+
+            }
             inicioEstado = false;
             agente.destination = transform.position;
         }
