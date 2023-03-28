@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class EstructuraSwitch : MonoBehaviour
 
 {
     int ataque = 0;
+    int vidas = 0;
     NavMeshAgent agente;
     Transform jugador;
     int estado = 0;
@@ -93,11 +95,15 @@ public class EstructuraSwitch : MonoBehaviour
 
         if (inicioEstado)
         {
-            Debug.Log("ataquEEEE");
+            
             ataque = ataque + 1;
-            if (ataque == 100)
+            Debug.Log("ataquEEEE " + (ataque));
+            if (ataque == 5)
             {
-
+                vidas = int.Parse(GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text) ;
+                vidas = vidas - 1;
+                ataque = 0;
+                GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = vidas.ToString();
             }
             inicioEstado = false;
             agente.destination = transform.position;

@@ -32,6 +32,12 @@ TagManager:
   - F1
   - F2
   - F3
+  - parry
+  - escudo
+  - PJ
+  - Enemy
+  - arma
+  - Vida
   layers:
   - Default
   - TransparentFX
