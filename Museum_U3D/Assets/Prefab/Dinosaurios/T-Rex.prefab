@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258362966784597016}
-  m_LocalRotation: {x: -0.01026272, y: 0.91713756, z: -0.012512553, w: -0.39824215}
+  m_LocalRotation: {x: -0.010265485, y: 0.9171385, z: -0.012514697, w: -0.39823985}
   m_LocalPosition: {x: 27.34, y: -4.02, z: 18.84}
   m_LocalScale: {x: 59.84869, y: 59.84869, z: 59.84869}
   m_ConstrainProportionsScale: 0
@@ -865,10 +865,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 9794402acb5e13041a2f66a362993f1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc120e6dcb62d84488284a1375f4cc6f, type: 2}
+    - target: {fileID: -3393059317818742671, guid: 9794402acb5e13041a2f66a362993f1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 924d9f7a05e1d43479e93dbcd95981ef, type: 2}
     - target: {fileID: 919132149155446097, guid: 9794402acb5e13041a2f66a362993f1a, type: 3}
       propertyPath: m_Name
       value: PlacaOroTRex
       objectReference: {fileID: 0}
+    - target: {fileID: 6170364737530096044, guid: 9794402acb5e13041a2f66a362993f1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 924d9f7a05e1d43479e93dbcd95981ef, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9794402acb5e13041a2f66a362993f1a, type: 3}
 --- !u!1001 &1104660014300934077
@@ -878,6 +890,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 639004354921072290}
     m_Modifications:
+    - target: {fileID: 6021755862652775141, guid: 031638f17bae1794aa7cae3a941a2db7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1ad67030ceadda498c4221c2e194ca2, type: 2}
     - target: {fileID: 7282685318870265362, guid: 031638f17bae1794aa7cae3a941a2db7, type: 3}
       propertyPath: m_RootOrder
       value: 9
