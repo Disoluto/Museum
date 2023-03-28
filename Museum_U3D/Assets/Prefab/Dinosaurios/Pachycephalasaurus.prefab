@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 527e8eddec5769a428b36bfd19593bf3, type: 2}
+  - {fileID: 2100000, guid: c1ad67030ceadda498c4221c2e194ca2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -527,10 +527,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: c2c33a7793697c94b9418637ae13f675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc120e6dcb62d84488284a1375f4cc6f, type: 2}
     - target: {fileID: 919132149155446097, guid: c2c33a7793697c94b9418637ae13f675, type: 3}
       propertyPath: m_Name
       value: PlacaOroPachy
       objectReference: {fileID: 0}
+    - target: {fileID: 2508838339402827008, guid: c2c33a7793697c94b9418637ae13f675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e28471205b7d1b44ac76369c8133dba, type: 2}
+    - target: {fileID: 8699224783455019111, guid: c2c33a7793697c94b9418637ae13f675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e28471205b7d1b44ac76369c8133dba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c33a7793697c94b9418637ae13f675, type: 3}
 --- !u!4 &543450651615472624 stripped
