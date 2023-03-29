@@ -66,7 +66,8 @@ public class Prueba : MonoBehaviour
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             SumoPuntos();
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -A-";
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "C O R R E C T A";
             Debug.Log("T O T A L -A-:  " + Puntuacion);
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
@@ -91,7 +92,8 @@ public class Prueba : MonoBehaviour
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             SumoPuntos();
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -B-";
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "C O R R E C T A";
             Debug.Log("T O T A L -B-:  " + Puntuacion);
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
@@ -115,7 +117,8 @@ public class Prueba : MonoBehaviour
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
             SumoPuntos();
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -C-";
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "C O R R E C T A";
             Debug.Log("T O T A L -C-:  " + Puntuacion);
             //Actualizo PUNTOS
             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
@@ -166,10 +169,16 @@ public class Prueba : MonoBehaviour
         //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         Time.timeScale = 1;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+        GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "";
     }
     void SumoPuntos()
     {
         Puntuacion = Puntuacion + 80;
+        if (Puntuacion > 80)
+        {
+            Debug.Log("F I N JUEGO " );
+            Application.Quit();
+        }
         Debug.Log("T O T A L       P U N T O S:  " + Puntuacion + "  " + pprueba);
     }
 }
