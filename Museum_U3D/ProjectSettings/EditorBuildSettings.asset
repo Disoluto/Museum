@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/David/DavidM.unity
+    guid: 9b5e749f1d4af8342a9bbfb923934006
   m_configObjects: {}

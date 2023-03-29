@@ -77,12 +77,13 @@ public class Prueba : MonoBehaviour
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+            comienzo();
             if (Puntuacion > 10)
             {
              Puntuacion = Puntuacion - 10;
              GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
-             GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
-             comienzo();
+
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -105,12 +106,13 @@ public class Prueba : MonoBehaviour
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+            comienzo();
             if (Puntuacion > 10)
             {
                 Puntuacion = Puntuacion - 10;
                 GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
-                GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
-                comienzo();
+
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -132,12 +134,13 @@ public class Prueba : MonoBehaviour
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+            comienzo();
             if (Puntuacion > 10)
             {
                 Puntuacion = Puntuacion - 10;
                 GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
-                GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
-                comienzo();
+
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -170,7 +173,7 @@ public class Prueba : MonoBehaviour
         //Debug.Log("Started Coroutine at timestamp : " + Time.time);
         Time.timeScale = 0;
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(3);
 
         //After we have waited 5 seconds print the time again.
         //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
@@ -181,7 +184,7 @@ public class Prueba : MonoBehaviour
     void SumoPuntos()
     {
         Puntuacion = Puntuacion + 80;
-        if (Puntuacion > 400)
+        if (Puntuacion > 80)
         {
             GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "G A N A S T E";
             comienzo();
