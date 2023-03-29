@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/David/DavidM.unity
     guid: 9b5e749f1d4af8342a9bbfb923934006
+  - enabled: 1
+    path: Assets/Scenes/David/Muerte.unity
+    guid: 9aab654332408dd48ba6c2e7229a067a
+  - enabled: 1
+    path: Assets/Scenes/David/Ganar.unity
+    guid: 0dad1759aadf4ca40ae6507577585f2f
   m_configObjects: {}

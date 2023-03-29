@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Prueba : MonoBehaviour
 {
     FIN salir;
@@ -186,10 +187,11 @@ public class Prueba : MonoBehaviour
         Puntuacion = Puntuacion + 80;
         if (Puntuacion > 80)
         {
-            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "G A N A S T E";
-            comienzo();
-            Debug.Log("Enhorabuena" );
-            Application.Quit();
+            SceneManager.LoadScene(2);
+            //GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "G A N A S T E";
+            //comienzo();
+            //Debug.Log("Enhorabuena" );
+            //Application.Quit();
         }
         //Debug.Log("T O T A L       P U N T O S:  " + Puntuacion + "  " + pprueba);
     }

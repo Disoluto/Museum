@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EstructuraSwitch : MonoBehaviour
 
@@ -125,15 +126,15 @@ public class EstructuraSwitch : MonoBehaviour
                     GameObject.FindWithTag("Vidas").GetComponent<TextMeshProUGUI>().text = "Vidas: 0";
                     CuentaVida = 0;
                     salud = 120;
-                    GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
-                    fin();
+                    //GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
+                    SceneManager.LoadScene(1);
 
                 }
                 if (salud < 1 & CuentaVida == 0)
                 {
 
                     //GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
-                    fin();
+                    SceneManager.LoadScene(1);
 
                 }
             }
@@ -156,12 +157,7 @@ public class EstructuraSwitch : MonoBehaviour
         inicioEstado = true;
 
     }
-    void fin()
-    {
-        
-        GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "M U E R T O";
-        Application.Quit();
-    }
+
 }
 
 
