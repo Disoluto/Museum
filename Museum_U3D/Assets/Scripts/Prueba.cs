@@ -7,14 +7,14 @@ using System.Xml;
 using TMPro;
 public class Prueba : MonoBehaviour
 {
-
+    FIN salir;
     string Cuadro = "C3";
     string pprueba = "";
     public TextAsset xmlRawFile;
     string Rcorrecta;
     int Puntuacion = 0;
     string Atexxto;
-
+    FIN ter;
 
     private void Start()
     {
@@ -25,6 +25,7 @@ public class Prueba : MonoBehaviour
         Atexxto = xmlRawFile.text;
         parseXmlFile(data);
         Debug.Log(data);
+        //ter.Exit();
 
     }
     void parseXmlFile(string xmlData)
@@ -80,6 +81,8 @@ public class Prueba : MonoBehaviour
             {
              Puntuacion = Puntuacion - 10;
              GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
+             GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+             comienzo();
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -106,6 +109,8 @@ public class Prueba : MonoBehaviour
             {
                 Puntuacion = Puntuacion - 10;
                 GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
+                GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+                comienzo();
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -131,6 +136,8 @@ public class Prueba : MonoBehaviour
             {
                 Puntuacion = Puntuacion - 10;
                 GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
+                GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "E R R O R";
+                comienzo();
             }
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
@@ -174,11 +181,14 @@ public class Prueba : MonoBehaviour
     void SumoPuntos()
     {
         Puntuacion = Puntuacion + 80;
-        if (Puntuacion > 10)
+        if (Puntuacion > 400)
         {
-            Debug.Log("F I N JUEGO " );
+            GameObject.FindWithTag("Pausa").GetComponent<TextMeshProUGUI>().text = "G A N A S T E";
+            comienzo();
+            Debug.Log("Enhorabuena" );
             Application.Quit();
         }
-        Debug.Log("T O T A L       P U N T O S:  " + Puntuacion + "  " + pprueba);
+        //Debug.Log("T O T A L       P U N T O S:  " + Puntuacion + "  " + pprueba);
     }
+
 }

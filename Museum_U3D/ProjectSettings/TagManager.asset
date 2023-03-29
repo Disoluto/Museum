@@ -40,6 +40,7 @@ TagManager:
   - Vida
   - Vidas
   - Pausa
+  - perder
   layers:
   - Default
   - TransparentFX
