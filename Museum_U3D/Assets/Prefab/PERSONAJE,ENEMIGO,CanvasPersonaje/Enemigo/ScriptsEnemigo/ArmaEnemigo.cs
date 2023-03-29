@@ -13,11 +13,6 @@ public class ArmaEnemigo : MonoBehaviour
             print("Danio");
         }
 
-        if (coll.CompareTag("escudo"))
-        {
-            gameObject.GetComponent<BoxCollider>().enabled = false;
-            print("Bloqueo");
-        }
         if (coll.CompareTag("parry"))
         {
             enemigo.GetComponent<Enemigo2>().stuneado = true;
