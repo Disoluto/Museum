@@ -174,7 +174,7 @@ public class Prueba : MonoBehaviour
     void SumoPuntos()
     {
         Puntuacion = Puntuacion + 80;
-        if (Puntuacion > 80)
+        if (Puntuacion > 10)
         {
             Debug.Log("F I N JUEGO " );
             Application.Quit();
