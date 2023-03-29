@@ -9,7 +9,8 @@ public class EstructuraSwitch : MonoBehaviour
 
 {
     int ataque = 0;
-    int vidas = 0;
+    int salud = 0;
+    int CuentaVida = 3;
     NavMeshAgent agente;
     Transform jugador;
     int estado = 0;
@@ -26,8 +27,9 @@ public class EstructuraSwitch : MonoBehaviour
     void Update()
 
     {
+
         //cronometro = cronometro + Time.deltaTime;
-       // agente.destination = jugador.position;
+        // agente.destination = jugador.position;
         switch (estado)
         {
             case 0: Patrulla(); break;
@@ -50,7 +52,7 @@ public class EstructuraSwitch : MonoBehaviour
         }
         cronometro = cronometro + Time.deltaTime;
         distanciaJugador = Vector3.Distance(transform.position, jugador.position);
-        Debug.Log("Patrulla");
+        ////Debug.Log("Patrulla");
 
         if (cronometro > 10f)
         {
@@ -97,13 +99,34 @@ public class EstructuraSwitch : MonoBehaviour
         {
             
             ataque = ataque + 1;
-            Debug.Log("ataquEEEE " + (ataque));
-            if (ataque == 5)
+           /// Debug.Log("ataquEEEE " + (ataque));
+            if (ataque == 1)
             {
-                vidas = int.Parse(GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text) ;
-                vidas = vidas - 1;
+                salud = int.Parse(GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text) ;
+                salud = salud - 1;
                 ataque = 0;
-                GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = vidas.ToString();
+                GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
+                if (salud < 1 & CuentaVida == 3 )
+                {
+                    GameObject.FindWithTag("Vidas").GetComponent<TextMeshProUGUI>().text = "Vidas: 2";
+                    CuentaVida = 2;
+                    salud = 120;
+                    GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
+                }
+                if (salud < 1 & CuentaVida == 2)
+                {
+                    GameObject.FindWithTag("Vidas").GetComponent<TextMeshProUGUI>().text = "Vidas: 1";
+                    CuentaVida = 1;
+                    salud = 120;
+                    GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
+                }
+                if (salud < 1 & CuentaVida == 1)
+                {
+                    GameObject.FindWithTag("Vidas").GetComponent<TextMeshProUGUI>().text = "Vidas: 0";
+                    CuentaVida = 0;
+                    salud = 120;
+                    GameObject.FindWithTag("Vida").GetComponent<TextMeshProUGUI>().text = salud.ToString();
+                }
             }
             inicioEstado = false;
             agente.destination = transform.position;

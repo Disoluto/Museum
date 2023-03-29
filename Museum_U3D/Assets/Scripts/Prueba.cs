@@ -12,8 +12,9 @@ public class Prueba : MonoBehaviour
     string pprueba = "";
     public TextAsset xmlRawFile;
     string Rcorrecta;
-    public int Puntos = 0;
+    int Puntuacion = 0;
     string Atexxto;
+
 
     private void Start()
     {
@@ -50,81 +51,84 @@ public class Prueba : MonoBehaviour
                 GameObject.FindWithTag("TextC").GetComponentInChildren<TextMeshProUGUI>().text = (C.InnerXml);
                 GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text = (D.InnerXml);
                 Rcorrecta = GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text;
+                Time.timeScale = 0;
+                
             }
 
         }
 
     }
 
-    public void BotonA()
+    void BotonA()
     {
         pprueba = "A";
+        Time.timeScale = 1;
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
-            Puntos = Puntos + 80;
+            SumoPuntos();
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -A-";
+            Debug.Log("T O T A L -A-:  " + Puntuacion);
             //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
             comienzo();
         }
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
-            if (Puntos > 10)
+            if (Puntuacion > 10)
             {
-                Puntos = Puntos - 10;
-            }    
-            //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
-            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
-        }
-
-    }
-    public void BotonB()
-    {
-        
-        pprueba = "B";
-        if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
-        {
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
-            Puntos = Puntos + 80;
-            //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
-            comienzo();
-        }
-        else
-        {
-            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
-            if (Puntos > 10)
-            {
-                Puntos = Puntos - 10;
+             Puntuacion = Puntuacion - 10;
+             GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
             }
-            //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
 
     }
-    public void BotonC()
+    void BotonB()
+    {
+        pprueba = "B";
+        Time.timeScale = 1;
+        if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
+        {
+            SumoPuntos();
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -B-";
+            Debug.Log("T O T A L -B-:  " + Puntuacion);
+            //Actualizo PUNTOS
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
+            comienzo();
+        }
+        else
+        {
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+            if (Puntuacion > 10)
+            {
+                Puntuacion = Puntuacion - 10;
+                GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
+            }
+            GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+        }
+    }
+     void BotonC()
     {
         pprueba = "C";
+        Time.timeScale = 1;
         if (GameObject.FindWithTag("Respuesta").GetComponent<TextMeshProUGUI>().text.Equals(pprueba))
         {
-            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A";
-            Puntos = Puntos + 80;
+            SumoPuntos();
+            GameObject.FindWithTag("Pregunta").GetComponent<TextMeshProUGUI>().text = " C O R R E C T A -C-";
+            Debug.Log("T O T A L -C-:  " + Puntuacion);
             //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
+            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
             comienzo();
         }
         else
         {
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
-            if (Puntos > 10)
+            if (Puntuacion > 10)
             {
-                Puntos = Puntos - 10;
+                Puntuacion = Puntuacion - 10;
+                GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + (Puntuacion);
             }
-            //Actualizo PUNTOS
-            GameObject.FindWithTag("Puntos").GetComponent<TextMeshProUGUI>().text = "Puntos: " + Puntos.ToString();
             GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
         }
     }
@@ -153,14 +157,19 @@ public class Prueba : MonoBehaviour
     IEnumerator ExampleCoroutine()
     {
         //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
         Time.timeScale = 0;
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSecondsRealtime(5);
 
         //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         Time.timeScale = 1;
         GameObject.FindWithTag("Canvass").GetComponent<Canvas>().enabled = false;
+    }
+    void SumoPuntos()
+    {
+        Puntuacion = Puntuacion + 80;
+        Debug.Log("T O T A L       P U N T O S:  " + Puntuacion + "  " + pprueba);
     }
 }

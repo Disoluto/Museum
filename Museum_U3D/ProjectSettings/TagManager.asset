@@ -38,6 +38,8 @@ TagManager:
   - Enemy
   - arma
   - Vida
+  - Vidas
+  - Pausa
   layers:
   - Default
   - TransparentFX
